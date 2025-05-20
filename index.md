@@ -1,5 +1,5 @@
 ---
 layout: home
-title: Welcome
+title: news
 ---
-Hello from my Jekyll-powered site!
+site under construction
