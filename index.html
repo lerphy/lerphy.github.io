@@ -10,23 +10,32 @@
       height: 100vh;
       background: url('background.jpg') no-repeat center center fixed;
       background-size: cover;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
       font-family: serif;
       position: relative;
+      color: white;
     }
 
     a {
       color: white;
       font-size: 1.2em;
       text-decoration: underline;
-      margin: 10px;
+      transition: color 0.3s ease;
     }
 
     a:hover {
       color: #00f; /* bright blue */
+    }
+
+    .top-left {
+      position: absolute;
+      top: 10px;
+      left: 15px;
+    }
+
+    .top-right {
+      position: absolute;
+      top: 10px;
+      right: 15px;
     }
 
     .credit {
@@ -47,11 +56,16 @@
   </style>
 </head>
 <body>
-  <a href="Carlos_A_Correia_Portfolio_May2025.pdf" download>portfolio.pdf</a>
-  <a href="mailto:studio@carlosacorreia.com">e-mail</a>
+  <div class="top-left">
+    <a href="Carlos_A_Correia_Portfolio_May2025.pdf" download>portfolio.pdf</a>
+  </div>
+
+  <div class="top-right">
+    <a href="mailto:studio@carlosacorreia.com">e-mail</a>
+  </div>
 
   <div class="credit">
-    <a href="https://www.butchercorreia.com" target="_blank">image © BUTCHER &amp; CORREIA</a>
+    <a href="https://www.butchercorreia.com" target="_blank" rel="noopener">image © BUTCHER &amp; CORREIA</a>
   </div>
 </body>
 </html>
