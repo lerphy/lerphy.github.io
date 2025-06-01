@@ -2,13 +2,13 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>carlos a. correia</title>
 
   <!-- SEO metadata -->
-  <meta name="description" content="Carlos A. Correia is an interdisciplinary visual artist. View portfolio, CV, and contact details.">
-  <meta name="keywords" content="Carlos A. Correia, artist, portfolio, contemporary art">
-  <meta name="author" content="Carlos A. Correia">
+  <meta name="description" content="Carlos A. Correia is an interdisciplinary visual artist. View portfolio, CV, and contact details." />
+  <meta name="keywords" content="Carlos A. Correia, artist, portfolio, contemporary art" />
+  <meta name="author" content="Carlos A. Correia" />
 
   <!-- Social media sharing metadata -->
   <meta property="og:title" content="Carlos A. Correia – Visual Artist" />
@@ -35,7 +35,7 @@
       position: relative;
       background: url('background.jpg') no-repeat center center fixed;
       background-size: cover;
-      overflow: hidden;
+      overflow: visible; /* allow absolute children to show */
     }
 
     a {
@@ -43,6 +43,8 @@
       font-size: 1.2em;
       text-decoration: underline;
       transition: color 0.3s ease;
+      position: relative;
+      z-index: 10;
     }
 
     a:hover {
@@ -54,11 +56,15 @@
       top: 33%;
       width: 100%;
       padding: 0;
+      height: 1.5em; /* enough height for links */
+      overflow: visible;
+      z-index: 10;
     }
 
     .desktop-links > div {
       position: absolute;
       top: 0;
+      white-space: nowrap; /* prevent wrapping */
     }
 
     .desktop-links .left {
@@ -79,6 +85,7 @@
       bottom: 20px;
       right: 20px;
       font-size: 0.6em;
+      z-index: 10;
     }
 
     .credit a {
@@ -128,4 +135,21 @@
   <!-- Desktop Layout -->
   <div class="desktop-links">
     <div class="left"><a href="Carlos_A_Correia_Portfolio_May2025.pdf" download>portfolio.pdf</a></div>
-    <div class="center"><a href="cv.
+    <div class="center"><a href="cv.pdf" download>cv.pdf</a></div>
+    <div class="right"><a href="mailto:studio@carlosacorreia.com">e-mail</a></div>
+  </div>
+
+  <!-- Mobile Layout -->
+  <div class="mobile-links">
+    <a href="Carlos_A_Correia_Portfolio_May2025.pdf" download>portfolio.pdf</a>
+    <a href="cv.pdf" download>cv.pdf</a>
+    <a href="mailto:studio@carlosacorreia.com">e-mail</a>
+  </div>
+
+  <!-- Footnote -->
+  <div class="credit">
+    <a href="https://www.butchercorreia.com" target="_blank" rel="noopener">image © BUTCHER &amp; CORREIA</a>
+  </div>
+
+</body>
+</html>
