@@ -44,19 +44,14 @@
     }
 
     .desktop-links {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      padding: 20px;
       position: absolute;
-      top: 0;
-      width: 100%;
-    }
-
-    .desktop-links .center {
-      position: absolute;
+      top: 33%;
       left: 50%;
       transform: translateX(-50%);
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
     }
 
     .credit {
@@ -67,63 +62,3 @@
     }
 
     .credit a {
-      color: white;
-      text-decoration: none;
-    }
-
-    .credit a:hover {
-      color: #00f;
-    }
-
-    .mobile-links {
-      display: none;
-    }
-
-    /* === Mobile Styles === */
-    @media (max-width: 600px) {
-      .desktop-links {
-        display: none;
-      }
-
-      .mobile-links {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        text-align: center;
-      }
-
-      .mobile-links a {
-        font-size: 1.2em;
-        margin: 10px 0;
-      }
-
-      .credit {
-        font-size: 0.6em;
-        right: 10px;
-        left: auto;
-        text-align: right;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <!-- Desktop Layout -->
-  <div class="desktop-links">
-    <div><a href="Carlos_A_Correia_Portfolio_May2025.pdf" download>portfolio.pdf</a></div>
-    <div class="center"><a href="cv.pdf" download>cv.pdf</a></div>
-    <div><a href="mailto:studio@carlosacorreia.com">e-mail</a></div>
-  </div>
-
-  <!-- Mobile Layout -->
-  <div class="mobile-links">
-    <a href="Carlos_A_Correia_Portfolio_May2025.pdf" download>portfolio.pdf</a>
-    <a href="cv.pdf" download>cv.pdf</a>
-    <a href="mailto:studio@carlosacorreia.com">e-mail</a>
-  </div>
-
-  <!-- Footnote -->
-  <div class="credit">
-    <a href="https://www.butchercorreia.c
