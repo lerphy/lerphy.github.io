@@ -55,7 +55,7 @@
 
     .credit a {
       color: white;
-      text-decoration: underline;
+      text-decoration: none; /* ✅ No underline */
     }
 
     .credit a:hover {
@@ -69,7 +69,6 @@
 
     /* === Mobile layout === */
     @media (max-width: 600px) {
-      /* Hide desktop layout */
       .top-left,
       .top-center,
       .top-right {
@@ -86,7 +85,7 @@
       }
 
       .mobile-links a {
-        font-size: 1.2em;
+        font-size: 1.2em; /* ✅ same size as desktop links */
         margin: 10px 0;
       }
 
@@ -94,35 +93,4 @@
         font-size: 0.6em;
         right: 10px;
         left: auto;
-        text-align: right;
-      }
-    }
-  </style>
-</head>
-<body>
-  <!-- Desktop layout -->
-  <div class="top-left">
-    <a href="Carlos_A_Correia_Portfolio_May2025.pdf" download>portfolio.pdf</a>
-  </div>
-
-  <div class="top-center">
-    <a href="cv.pdf" download>cv.pdf</a>
-  </div>
-
-  <div class="top-right">
-    <a href="mailto:studio@carlosacorreia.com">e-mail</a>
-  </div>
-
-  <!-- Mobile layout -->
-  <div class="mobile-links">
-    <a href="Carlos_A_Correia_Portfolio_May2025.pdf" download>portfolio.pdf</a>
-    <a href="cv.pdf" download>cv.pdf</a>
-    <a href="mailto:studio@carlosacorreia.com">e-mail</a>
-  </div>
-
-  <!-- Footnote -->
-  <div class="credit">
-    <a href="https://www.butchercorreia.com" target="_blank" rel="noopener">image © BUTCHER &amp; CORREIA</a>
-  </div>
-</body>
-</html>
+        text-
