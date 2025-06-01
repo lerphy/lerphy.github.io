@@ -62,12 +62,18 @@
       color: #00f;
     }
 
+    /* Hide mobile layout by default */
+    .mobile-links {
+      display: none;
+    }
+
     /* === Mobile layout === */
     @media (max-width: 600px) {
+      /* Hide desktop layout */
       .top-left,
       .top-center,
       .top-right {
-        display: none; /* Hide original positions */
+        display: none;
       }
 
       .mobile-links {
