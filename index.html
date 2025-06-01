@@ -23,13 +23,28 @@
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
       margin: 0;
-      background: url('background.jpg') no-repeat center center fixed;
-      background-size: cover;
+      padding: 0;
+      height: 100%;
       font-family: serif;
       color: white;
-      height: 100vh;
+    }
+
+    body {
+      position: relative;
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      overflow: hidden;
+    }
+
+    /* Dark overlay to improve text contrast */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
     }
 
     a {
@@ -62,4 +77,67 @@
       position: absolute;
       bottom: 20px;
       right: 20px;
-      font-size: 0.
+      font-size: 0.6em;
+    }
+
+    .credit a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .credit a:hover {
+      color: #00f;
+    }
+
+    /* === Mobile Styles === */
+    @media (max-width: 600px) {
+      .desktop-links {
+        display: none;
+      }
+
+      .mobile-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+      }
+
+      .mobile-links a {
+        font-size: 1.2em;
+        margin: 10px 0;
+      }
+
+      .credit {
+        font-size: 0.6em;
+        right: 10px;
+        left: auto;
+        text-align: right;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Desktop Layout -->
+  <div class="desktop-links">
+    <a href="Carlos_A_Correia_Portfolio_May2025.pdf" download>portfolio.pdf</a>
+    <a href="cv.pdf" download>cv.pdf</a>
+    <a href="mailto:studio@carlosacorreia.com">e-mail</a>
+  </div>
+
+  <!-- Mobile Layout -->
+  <div class="mobile-links">
+    <a href="Carlos_A_Correia_Portfolio_May2025.pdf" download>portfolio.pdf</a>
+    <a href="cv.pdf" download>cv.pdf</a>
+    <a href="mailto:studio@carlosacorreia.com">e-mail</a>
+  </div>
+
+  <!-- Footnote -->
+  <div class="credit">
+    <a href="https://www.butchercorreia.com" target="_blank" rel="noopener">image © BUTCHER &amp; CORREIA</a>
+  </div>
+
+</body>
+</html>
