@@ -80,20 +80,20 @@
 
     .tooltip {
       visibility: hidden;
-      background-color: black;
+      background-color: #00f;
       color: white;
       text-align: center;
-      padding: 4px 8px;
+      padding: 2px 6px;
+      font-size: 0.75em;
       position: absolute;
-      z-index: 100;
-      font-size: 0.8em;
-      border-radius: 0px; /* straight corners */
-      white-space: nowrap;
-      top: 140%; /* show below the link */
+      top: 135%;
       left: 50%;
       transform: translateX(-50%);
       opacity: 0;
       transition: opacity 0.2s ease;
+      border-radius: 0; /* straight corners */
+      white-space: nowrap;
+      z-index: 20;
     }
 
     a:hover .tooltip {
@@ -142,21 +142,21 @@
         position: relative;
       }
 
-      .credit {
-        font-size: 0.6em;
-        right: 10px;
-        left: auto;
-        text-align: right;
-      }
-
       .tooltip {
+        font-size: 0.75em;
         top: 110%;
-        font-size: 0.8em;
       }
 
       .tooltip.visible {
         visibility: visible;
         opacity: 1;
+      }
+
+      .credit {
+        font-size: 0.6em;
+        right: 10px;
+        left: auto;
+        text-align: right;
       }
     }
   </style>
@@ -206,7 +206,7 @@
       tooltip.classList.add('visible');
       setTimeout(() => {
         tooltip.classList.remove('visible');
-      }, 2000); // show for 2 seconds
+      }, 2000); // 2 seconds visibility
     }
   </script>
 
