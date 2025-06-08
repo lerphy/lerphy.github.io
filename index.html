@@ -43,7 +43,7 @@
     a {
       color: white;
       font-size: 1.2em;
-      text-decoration: none; /* No underline */
+      text-decoration: none;
       position: relative;
     }
 
@@ -91,7 +91,7 @@
       transform: translateX(-50%);
       opacity: 0;
       transition: opacity 0.2s ease;
-      border-radius: 0; /* straight corners */
+      border-radius: 0;
       white-space: nowrap;
       z-index: 20;
     }
@@ -139,17 +139,6 @@
       .mobile-links a {
         font-size: 1.2em;
         margin: 10px 0;
-        position: relative;
-      }
-
-      .tooltip {
-        font-size: 0.75em;
-        top: 110%;
-      }
-
-      .tooltip.visible {
-        visibility: visible;
-        opacity: 1;
       }
 
       .credit {
@@ -184,14 +173,8 @@
 
   <!-- Mobile Layout -->
   <div class="mobile-links">
-    <a href="Carlos_A_Correia_Portfolio_May2025.pdf" download onclick="showTooltip(this)">
-      portfolio
-      <span class="tooltip">5 MB</span>
-    </a>
-    <a href="cv.pdf" download onclick="showTooltip(this)">
-      cv
-      <span class="tooltip">100 KB</span>
-    </a>
+    <a href="Carlos_A_Correia_Portfolio_May2025.pdf" download>portfolio.pdf</a>
+    <a href="cv.pdf" download>cv.pdf</a>
     <a href="mailto:studio@carlosacorreia.com">e-mail</a>
   </div>
 
@@ -199,16 +182,6 @@
   <div class="credit">
     <a href="https://www.butchercorreia.com" target="_blank" rel="noopener">image © BUTCHER & CORREIA</a>
   </div>
-
-  <script>
-    function showTooltip(link) {
-      const tooltip = link.querySelector('.tooltip');
-      tooltip.classList.add('visible');
-      setTimeout(() => {
-        tooltip.classList.remove('visible');
-      }, 2000); // 2 seconds visibility
-    }
-  </script>
 
 </body>
 </html>
