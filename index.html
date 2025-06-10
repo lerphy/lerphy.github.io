@@ -221,5 +221,14 @@
     randomizePosition(credit);
   </script>
 
+<script>
+  function toggleMobileStatement(e) {
+    e.preventDefault();
+    const statement = document.getElementById("mobile-statement");
+    statement.style.display = statement.style.display === "none" ? "block" : "none";
+  }
+</script>
+
+
 </body>
 </html>
