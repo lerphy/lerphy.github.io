@@ -60,6 +60,54 @@
     .credit a:hover {
       color: #00f;
     }
+
+    @media (max-width: 600px) {
+      body {
+        overflow: auto;
+        padding: 30px 20px;
+      }
+
+      .link {
+        position: relative;
+        display: block;
+        background-color: #00f;
+        color: white;
+        margin: 12px 0;
+        font-size: 1.2em;
+        text-align: center;
+        padding: 12px;
+        border-radius: 0;
+      }
+
+      .tooltip {
+        position: relative;
+        visibility: hidden;
+        opacity: 0;
+        margin-top: 10px;
+        pointer-events: auto;
+        display: none;
+      }
+
+      .tooltip.active {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+      }
+
+      #tooltip {
+        position: relative;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .credit {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        font-size: 0.65em;
+      }
+
   </style>
 </head>
 <body>
