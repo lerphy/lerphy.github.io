@@ -6,6 +6,7 @@
   <title>carlos a. correia</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro&display=swap" rel="stylesheet">
+
   <style>
     html, body {
       margin: 0;
@@ -16,49 +17,37 @@
       background-size: cover;
       color: white;
       overflow: hidden;
-      position: relative;
     }
 
     .link {
       position: absolute;
-      padding: 5px 10px;
-      background: #00f;
+      background-color: #00f;
       color: white;
-      text-decoration: none;
       font-size: 1.2em;
-      white-space: nowrap;
-    }
-
-    .link:hover {
-      background: #fff;
-      color: #00f;
+      text-decoration: none;
+      padding: 6px 12px;
+      cursor: pointer;
+      z-index: 10;
     }
 
     .tooltip {
       position: absolute;
-      background: #00f;
-      color: white;
-      font-size: 0.75em;
-      padding: 3px 6px;
-      white-space: nowrap;
-      visibility: hidden;
-      z-index: 999;
-      pointer-events: none;
-    }
-
-    .tooltip.active {
-      background: #fff;
+      background: white;
       color: #00f;
+      padding: 4px 8px;
+      font-size: 0.75em;
+      white-space: nowrap;
       border: 1px solid #00f;
+      pointer-events: none;
+      visibility: hidden;
+      z-index: 1000;
     }
 
     .credit {
       position: absolute;
-      bottom: 20px;
-      right: 20px;
       font-size: 0.6em;
-      z-index: 10;
       color: white;
+      z-index: 10;
     }
 
     .credit a {
@@ -73,61 +62,67 @@
 </head>
 <body>
 
-  <a class="link" id="link-pdf" href="CV_Carlos A. Correia.pdf" download>pdf</a>
-  <a class="link" id="link-portfolio" href="Portfolio_Carlos A. Correia.pdf" download>portfolio</a>
-  <a class="link" id="link-email" href="mailto:studio@carlosacorreia.com">e-mail</a>
-  <a class="link" id="link-artist" href="#">artist statement</a>
+  <!-- Randomized Links -->
+  <a class="link" id="pdf" href="CV_Carlos A. Correia.pdf" download>pdf</a>
+  <a class="link" id="portfolio" href="Portfolio_Carlos A. Correia.pdf" download>portfolio</a>
+  <a class="link" id="email" href="mailto:studio@carlosacorreia.com">e-mail</a>
+  <a class="link" id="statement">artist statement</a>
 
+  <!-- Tooltip -->
   <div class="tooltip" id="tooltip"></div>
 
-  <div class="credit">
+  <!-- Randomized Credit -->
+  <div class="credit" id="credit">
     <a href="https://www.butchercorreia.com" target="_blank" rel="noopener">image © BUTCHER & CORREIA</a>
   </div>
 
   <script>
-    function randomPosition(element) {
-      const padding = 100;
-      const maxX = window.innerWidth - element.offsetWidth - padding;
-      const maxY = window.innerHeight - element.offsetHeight - padding;
-      const x = Math.random() * maxX;
-      const y = Math.random() * maxY;
-      element.style.left = `${x}px`;
-      element.style.top = `${y}px`;
-    }
-
-    const tooltip = document.getElementById("tooltip");
-
-    function attachHover(link, message, highlight = false) {
-      link.addEventListener("mousemove", (e) => {
-        tooltip.textContent = message;
-        tooltip.style.left = `${e.pageX + 10}px`;
-        tooltip.style.top = `${e.pageY - 10}px`;
-        tooltip.classList.add("show");
-        tooltip.style.visibility = "visible";
-        if (highlight) {
-          tooltip.classList.add("active");
-        } else {
-          tooltip.classList.remove("active");
-        }
-      });
-
-      link.addEventListener("mouseleave", () => {
-        tooltip.style.visibility = "hidden";
-      });
-    }
-
-    // Get all links
     const links = [
-      { el: document.getElementById("link-pdf"), message: "106 KB", highlight: true },
-      { el: document.getElementById("link-portfolio"), message: "21.4 MB", highlight: true },
-      { el: document.getElementById("link-email"), message: "studio@carlosacorreia.com", highlight: false },
-      { el: document.getElementById("link-artist"), message: "hello, my name is carlos", highlight: false },
+      {
+        el: document.getElementById('pdf'),
+        text: '106 KB'
+      },
+      {
+        el: document.getElementById('portfolio'),
+        text: '21.4 MB'
+      },
+      {
+        el: document.getElementById('email'),
+        text: 'studio@carlosacorreia.com'
+      },
+      {
+        el: document.getElementById('statement'),
+        text: 'Carlos A. Correia’s solo practice explores the private space by investigating individual identity in relation to collective identity within political and social contexts...'
+      }
     ];
 
-    links.forEach(item => {
-      randomPosition(item.el);
-      attachHover(item.el, item.message, item.highlight);
+    const tooltip = document.getElementById('tooltip');
+    const credit = document.getElementById('credit');
+
+    function randomizePosition(el) {
+      const maxX = window.innerWidth - el.offsetWidth;
+      const maxY = window.innerHeight - el.offsetHeight;
+      el.style.left = Math.random() * maxX + 'px';
+      el.style.top = Math.random() * maxY + 'px';
+    }
+
+    links.forEach(({ el, text }) => {
+      randomizePosition(el);
+
+      el.addEventListener('mousemove', e => {
+        tooltip.textContent = text;
+        tooltip.style.left = (e.pageX + 12) + 'px';
+        tooltip.style.top = (e.pageY - 10) + 'px';
+        tooltip.style.visibility = 'visible';
+      });
+
+      el.addEventListener('mouseleave', () => {
+        tooltip.style.visibility = 'hidden';
+      });
     });
+
+    randomizePosition(credit);
   </script>
+
 </body>
 </html>
