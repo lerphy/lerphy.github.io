@@ -81,51 +81,68 @@
     }
 
     @media (max-width: 600px) {
-      body {
-        overflow: auto;
-        padding: 30px 20px;
-      }
+  body {
+    background-size: cover;
+    overflow-x: hidden;
+  }
 
-      .link {
-        position: relative;
-        display: block;
-        background-color: #00f;
-        color: white;
-        margin: 12px 0;
-        font-size: 1.2em;
-        text-align: center;
-        padding: 12px;
-        border-radius: 0;
-      }
+  .desktop-links {
+    display: none;
+  }
 
-      .tooltip {
-        position: relative;
-        visibility: hidden;
-        opacity: 0;
-        margin-top: 10px;
-        pointer-events: auto;
-        display: none;
-      }
+  .mobile-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    padding-top: 60px;
+    gap: 16px;
+  }
 
-      .tooltip.active {
-        visibility: visible;
-        opacity: 1;
-        display: block;
-      }
+  .mobile-links a {
+    font-size: 1em;
+    color: white;
+    background: #0000ff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    width: fit-content;
+  }
 
-      #tooltip {
-        position: relative;
-        max-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-      }
+  .mobile-links a:active {
+    opacity: 0.8;
+  }
 
-      .credit {
-        position: fixed;
-        bottom: 10px;
-        right: 10px;
-        font-size: 0.65em;
-      }
+  .mobile-artist-statement-text {
+    color: white;
+    background: #0000ff;
+    padding: 10px;
+    font-size: 0.9em;
+    max-width: 250px;
+    margin-top: 8px;
+    text-align: left;
+  }
+
+  .credit {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.6em;
+    z-index: 10;
+    text-align: right;
+  }
+
+  .credit a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .credit a:active {
+    color: #ccc;
+  }
+}
 
   </style>
 </head>
@@ -144,7 +161,18 @@
   <div class="credit" id="credit">
     <a href="https://www.butchercorreia.com" target="_blank" rel="noopener">image © BUTCHER & CORREIA</a>
   </div>
-
+  
+  <!-- Mobile Layout -->
+  <div class="mobile-links">
+    <a href="Portfolio_Carlos A. Correia.pdf" download>portfolio.pdf</a>
+    <a href="CV_Carlos A. Correia.pdf" download>cv.pdf</a>
+    <a href="mailto:studio@carlosacorreia.com">e-mail</a>
+    <a href="#" onclick="toggleMobileStatement(event)">artist statement</a>
+    <div id="mobile-statement" class="mobile-artist-statement-text" style="display: none;">
+      Carlos A. Correia’s solo practice explores the private space by investigating individual identity in relation to collective identity within political and social contexts, both local and global. Using repetition as a core technique, his work delves deeply into themes of labor, hierarchy, and social norms. Often functioning as a critical commentary on contemporary societal structures, Carlos’ art invites reflection on the complexities of human experience.
+    </div>
+  </div>
+  
   <script>
     const links = [
       {
